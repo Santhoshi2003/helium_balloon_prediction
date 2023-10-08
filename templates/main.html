@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Cartoon Character Party</title>
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='Birthday.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            height: 100vh; /* Make the body take up the full viewport height */
+        }
+
+        /* Center the container horizontally and vertically */
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            margin-top:220px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #f4f4f4;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JOIN WITH US!</h1>
+        <p><b>To make your special person's<br>day even more beautiful</b></p>
+        <button onclick="window.location.href='index.html'">Let's Start</button>
+    </div>
+</body>
+</html>

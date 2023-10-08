@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Party Balloon Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='empty.css') }}">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='Index.jpeg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        p {
+            font-size: 18px;
+            animation: fadeInUp 1s ease-in-out 0.5s;
+        }
+
+        .input {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            animation: fadeInUp 1s ease-in-out 1s;
+        }
+
+        label {
+            font-weight: bold;
+            display: flex;
+            align-items: center; /* Vertically center label and input */
+            margin-bottom: 10px;
+        }
+
+        label[for="event"] {
+            margin-top: 10px; /* Add margin-top to separate the label from the previous input */
+        }
+
+        input[type="number"] {
+            width: 80%; /* Adjust the width as needed */
+            padding: 10px;
+            margin-left: 10px; /* Add spacing between input elements */
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Added transform for button animation */
+        }
+
+        button:hover {
+            background-color: #ff4500;
+            transform: scale(1.05); /* Increase the button size on hover */
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body> 
+    <h1>WELCOME TO CARTOON CHARACTERS PARTY</h1>
+    <p>Enter the number of guests and the type of event to calculate the number of helium balloons needed:</p>
+    <div class="input">
+        <form method="POST" action="/predict">
+            <label for="guests">Number of Guests:</label>
+            <input type="number" name="guests" id="guests" min="1" max="300" step="1" value="1">
+            <label for="event" style="margin-left: 10px;">Type of Event:</label> <!-- Added margin-left here -->
+            <select name="event" id="event">
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="achievement">Achievement</option>
+                <option value="other">Other</option>
+            </select><br><br>
+            <button type="submit">Calculate Balloons</button>
+        </form>
+    </div>
+</body>
+</html>

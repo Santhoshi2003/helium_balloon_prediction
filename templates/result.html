@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Party Balloon Calculator - Result</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='Index.jpeg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .result {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .result p b {
+            font-weight: bold;
+        }
+
+        .result p {
+            margin: 10px 0;
+        }
+
+        .result p:last-child {
+            margin-bottom: 0;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #ff4500;
+        }
+
+    </style>
+</head>
+<body> 
+    <h1>WELCOME TO CARTOON CHARACTERS PARTY</h1>
+    <p><b>Results for your party:</b></p>
+    <div class="result">
+        <p><b>Number of Guests:</b> {{ guests }}</p>
+        <p><b>Type of Event:</b> {{ event }}</p>
+        <p><b>Estimated Number of Helium Balloons Needed:</b> {{ balloons_needed }}</p>
+    </div>
+    <div class="button-container">
+        <a href="index.html">Back to Home</a>
+    </div>
+</body>
+</html>
